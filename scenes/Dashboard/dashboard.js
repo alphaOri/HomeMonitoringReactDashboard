@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-//import './dashboard.css';
+import './dashboard.css';
+import '/home/david/node_modules/material-design-icons/iconfont/material-icons.css'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -12,16 +13,48 @@ class Dashboard extends Component {
   render() {
     return (
 		<div ref="root"style={{height:"50vh"}}>
-
-				<div>{'msg: ' + this.props.data.msg.payload}</div>
-				<div>{'msg Received: ' + this.props.data.msgReceived}</div>
-				<div>{'control MsgReceived: ' + this.props.data.controlMsgReceived}</div>
-				<div>{'msg Sent: ' + this.props.data.msgSent}</div>
-				<div>{'last Msg Received: ' + this.props.data.lastMsgReceived}</div>
-				<div>{'last Ctl Msg Received: ' + this.props.data.lastCtlMsgReceived}</div>
-				<div>{'last Msg Sent: ' + this.props.data.lastMsgSent}</div>
-				<div> bob bob bob </div>
-
+			<div class="MainBackground">
+	  			<div class="MainTopBar">
+					<div class="CardBarTitle">
+						Home
+					</div>
+					<div class="CardBarRight">
+						<i class="material-icons md-36">settings</i>
+					</div>
+	    		</div>
+	    		<div class="CardBoardContainer">
+		    		<div class="CardContainer">
+	    				<div class="CardBar">
+	    					<div class="CardBarTitle">
+	    						Water
+	    					</div>
+	    					<div class="CardBarRight">
+	    						<i class="material-icons md-36">settings_overscan</i>
+	    					</div>
+	    				</div>
+	    				<div class="CardBody">
+	    					<div class="CardItems">
+		    					<div class="CardItem">
+		    						<div class="CardBodyTextCentered">
+		    							usage till now
+		    						</div>
+		    						<div class="CardBodyTextHighlightCentered">
+		    							18.4 gallons
+		    						</div>
+		    					</div>
+		    					<div class="CardItem">
+		    						<div class="CardBodyTextCentered">
+		    							current usage
+		    						</div>
+		    						<div class="CardBodyTextHighlightCentered">
+		    							2.46 gal/min
+		    						</div>
+		    					</div>
+		    				</div>
+		    			</div>
+	    			</div>
+	    		</div>
+	    	</div>
 		</div>
     );
   }
