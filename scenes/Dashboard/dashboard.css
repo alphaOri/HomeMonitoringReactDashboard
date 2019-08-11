@@ -18,6 +18,8 @@
 body {
 	margin: 0;
 	font-family: 'roboto', sans-serif;
+	height: 1280px;
+	width: 800px;
 }
 
 .MainBackground {
@@ -95,6 +97,10 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.GraphBar {
+	align-self: flex-start;
 }
 
 .CardBodyText {
