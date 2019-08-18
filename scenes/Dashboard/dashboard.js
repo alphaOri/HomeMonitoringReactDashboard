@@ -1,16 +1,28 @@
-import React, { Component } from 'react';
-import './dashboard.css';
+import React, { Component } from 'react'
+import './dashboard.css'
 import '/home/david/node_modules/material-design-icons/iconfont/material-icons.css'
-import WaterCard from './WaterCard';
+import WaterCard from './WaterCard'
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    };
+    	water: null
+    }
+  }
+
+  componentWillReceiveProps() {
+  	if(this.props.data.payload !== undefined) {
+	  	if(this.props.data.payload.water !== undefined) {
+	  		this.setState((state, props) => ({
+			  water: this.props.data.payload.water
+			}));
+	  	}
+	}
   }
 
   render() {
+
     return (
 		<div ref="root">
 	  		<div class="MainBackground">
@@ -23,11 +35,11 @@ class Dashboard extends Component {
 					</div>
 	    		</div>
     			<div class="CardBoardContainer">
-					<WaterCard current={this.props.msg}/>
+					<WaterCard waterData={this.state.water}/>
 				</div>
 	    	</div>
 		</div>
-    );
+	)
   }
 }
 

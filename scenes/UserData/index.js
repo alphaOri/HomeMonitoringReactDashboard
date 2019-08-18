@@ -11,7 +11,7 @@ class UserData extends Component{
 		super(props)
 
 		this.state = {
-			msg:'payload Hello World',
+			msg:'',
 			UIBuilderVersion: '',
 			webSocket : '',
 			msgReceived : '',
@@ -28,12 +28,12 @@ class UserData extends Component{
 			  msg: newVal
 			})
 			this.forceUpdate();
-			console.info("console.info: " + JSON.stringify(newVal))
+			//console.info("console.info: " + JSON.stringify(newVal))
 		})
 
 
 		uibuilder.onChange('msgsReceived',(newVal) =>{
-			console.info('New msg sent to us from Node-RED over Socket.IO.TotalCount:',newVal)
+			//console.info('New msg sent to us from Node-RED over Socket.IO.TotalCount:',newVal)
 			this.setState({
 			  msgReceived: newVal
 			})
@@ -42,7 +42,7 @@ class UserData extends Component{
 
 		//IfSocket.IOconnects/disconnects
 		uibuilder.onChange('ioConnected',(newVal) =>{
-			console.info('Socket.IOConnectionStatusChanged:',newVal)
+			//console.info('Socket.IOConnectionStatusChanged:',newVal)
 			this.setState({
 			  webSocket: newVal
 			})
@@ -51,7 +51,7 @@ class UserData extends Component{
 
 		//IfamessageissentbacktoNode-RED
 		uibuilder.onChange('msgsSent',(newVal) =>{
-			console.info('New msg sent to Node-RED over Socket.IO.TotalCount:',newVal)
+			//console.info('New msg sent to Node-RED over Socket.IO.TotalCount:',newVal)
 			this.setState({
 			  msgSent: newVal
 			})
@@ -60,7 +60,7 @@ class UserData extends Component{
 
 		//IfwereceiveacontrolmessagefromNode-RED
 		uibuilder.onChange('msgsCtrl',(newVal) =>{
-			console.info('New control msg sent to us from Node-RED over Socket.IO.TotalCount:',newVal)
+			//console.info('New control msg sent to us from Node-RED over Socket.IO.TotalCount:',newVal)
 			this.setState({
 			  controlMsgReceived: newVal
 			})
@@ -77,7 +77,7 @@ class UserData extends Component{
 
 	render(){
 		return(
-			<Dashboard data={this.state} /> 
+			<Dashboard data={this.state.msg} /> 
 
 			/*<div ref="root"style={{height:"50vh"}}>
 				<div>{'msg: ' + this.state.msg.payload}</div>
