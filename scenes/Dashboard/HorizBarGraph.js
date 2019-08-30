@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './dashboard.css';
-import '/home/david/node_modules/material-design-icons/iconfont/material-icons.css'
+import '../fonts/material-design-icons/iconfont/material-icons.css'
 
 class HorizBarGraph extends Component {
   constructor(props) {
